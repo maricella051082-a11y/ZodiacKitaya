@@ -1,0 +1,8 @@
+tmp/
+*-check*.png
+site-check*.png
+reference.png
+ChatGPT Image*.png
+spec.txt
+Thumbs.db
+.DS_Store

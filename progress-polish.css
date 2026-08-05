@@ -1,0 +1,50 @@
+.top .xp{position:relative;display:grid;grid-template-columns:40px minmax(180px,520px) auto;align-items:center;gap:10px;max-width:670px;padding:7px 13px 7px 8px;border:3px double #b27b28;border-radius:28px;background:linear-gradient(180deg,#f8e6b4,#dfbd78);box-shadow:inset 0 0 16px #70401730,0 4px 10px #49250f30}
+.top .xp:before,.top .xp:after{content:'◆';position:absolute;color:#9b2c16;font-size:10px;text-shadow:0 1px #f4d589}.top .xp:before{left:51px}.top .xp:after{right:75px}
+.top .xp>.ui-mark{position:relative;z-index:2;width:35px;height:35px;margin:0;border:5px double #e0ae4b;background:radial-gradient(circle,#aa381b,#671609);color:#ffe09a;font-size:17px;box-shadow:0 3px 7px #4b210f55}
+.top .xp>.bar{position:relative;height:18px;margin:0 11px;overflow:hidden;border:4px double #a77329;border-radius:12px;background:repeating-linear-gradient(135deg,#d9bd7d 0 10px,#e9d29b 10px 20px);box-shadow:inset 0 2px 6px #5f391d66,0 1px #fff0c1}
+.top .xp>.bar:before{content:'';position:absolute;z-index:2;inset:2px 5px;border-top:1px solid #fff2bf88;border-radius:8px;pointer-events:none}
+.top .xp>.bar i{position:relative;height:100%;border-right:2px solid #dfb34e;background:linear-gradient(90deg,#06483e,#17715d 55%,#5f954d);box-shadow:inset 0 2px 4px #8ad5a244,0 0 9px #225d43;transition:width .6s ease}
+.top .xp>b{position:relative;z-index:2;min-width:78px;padding:5px 10px;border:2px solid #b17a2b;border-radius:16px;background:#f5dca1;color:#682d15;text-align:center;white-space:nowrap;box-shadow:inset 0 0 9px #7b461b28;font-size:14px}
+@media(max-width:740px){.top .xp{grid-template-columns:35px minmax(100px,1fr);padding-right:8px}.top .xp>b{display:none}.top .xp:after{display:none}.top .xp>.bar{margin-right:3px}}
+
+/* Jade-and-gold progress plaque */
+.top .xp{isolation:isolate;grid-template-columns:46px minmax(190px,520px) auto;gap:12px;max-width:700px;padding:9px 15px 9px 10px;border:1px solid #774418;border-radius:13px 30px 13px 30px;background:linear-gradient(135deg,#6f3d17 0 8px,#d8a744 9px 12px,#0a5145 13px calc(100% - 13px),#d8a744 calc(100% - 12px) calc(100% - 9px),#6f3d17 calc(100% - 8px));box-shadow:inset 0 0 0 2px #f1d47b,inset 0 0 20px #001d1888,0 5px 13px #45230f42}
+.top .xp:before,.top .xp:after{content:'';z-index:-1;top:50%;width:42px;height:28px;margin-top:-14px;background:radial-gradient(circle at 72% 50%,transparent 0 5px,#e3b655 6px 8px,transparent 9px),radial-gradient(circle at 30% 50%,transparent 0 7px,#9c651f 8px 10px,transparent 11px);filter:drop-shadow(0 1px #4e2c12)}
+.top .xp:before{left:-25px}.top .xp:after{right:-25px;transform:scaleX(-1)}
+.top .xp>.ui-mark{width:39px;height:39px;border:2px solid #f0cf72;outline:2px solid #7f491d;outline-offset:2px;background:radial-gradient(circle at 38% 32%,#c64b28,#861f0e 55%,#501207);box-shadow:inset 0 0 0 2px #e6ac45,0 3px 8px #001d17;color:#ffe9a5}
+.top .xp>.bar{height:20px;margin:0;overflow:visible;border:2px solid #e1b854;outline:1px solid #5f3516;outline-offset:2px;border-radius:4px 13px 4px 13px;background:linear-gradient(#d0a75d,#f0d697 48%,#b98941);box-shadow:inset 0 3px 7px #54301688,0 1px #f9e9ae}
+.top .xp>.bar:before{inset:3px 6px;border-top:2px solid #fff4c488;border-radius:8px}
+.top .xp>.bar i{border-right:3px solid #f2c55c;border-radius:2px 9px 2px 9px;background:linear-gradient(180deg,#5da58a,#0e6556 52%,#073f37);box-shadow:inset 0 2px 3px #b2e0c066,0 0 8px #e9c35c88}
+.top .xp>b{min-width:86px;padding:6px 12px;border:1px solid #6e3d17;outline:2px solid #d3a33f;outline-offset:1px;border-radius:4px 14px 4px 14px;background:linear-gradient(135deg,#f8e6af,#ddb767);color:#54240f;box-shadow:inset 0 0 0 2px #f8dda0,inset 0 0 10px #77451638;font-size:15px}
+@media(max-width:740px){.top .xp{grid-template-columns:39px minmax(100px,1fr);padding:8px 11px}.top .xp:before,.top .xp:after{display:none}.top .xp>.bar{margin:0 3px}}
+
+/* Vintage carved progress tablet */
+.top .xp{grid-template-columns:42px minmax(190px,520px) auto;gap:13px;padding:8px 14px 8px 10px;border:3px double #79501f;border-radius:5px;background:linear-gradient(90deg,#b4833d 0 7px,#ead39a 8px 13px,#cda960 14px calc(100% - 14px),#ead39a calc(100% - 13px) calc(100% - 8px),#8d6026 calc(100% - 7px)),repeating-linear-gradient(0deg,transparent 0 3px,#61330d0d 4px);box-shadow:inset 0 0 0 2px #f5dfa4,inset 0 0 18px #6a3e1b66,0 3px 7px #49250f42}
+.top .xp:before,.top .xp:after{content:'';display:block;top:50%;width:24px;height:34px;margin-top:-17px;border:3px double #895c25;background:linear-gradient(135deg,#e2c477,#9b6a2b);clip-path:polygon(50% 0,100% 28%,78% 50%,100% 72%,50% 100%,0 72%,22% 50%,0 28%);filter:drop-shadow(0 2px 1px #59341566)}
+.top .xp:before{left:-16px}.top .xp:after{right:-16px;transform:none}
+.top .xp>.ui-mark{width:36px;height:36px;border:3px double #d4aa55;outline:1px solid #5a3518;outline-offset:1px;border-radius:3px;background:linear-gradient(145deg,#9d321b,#64180c);box-shadow:inset 0 0 8px #3b0c08,2px 2px 3px #53311666;color:#edcf83}
+.top .xp>.bar{height:16px;border:3px double #775023;outline:0;border-radius:2px;background:linear-gradient(#b98d4d,#e2c47e 48%,#9f743a);box-shadow:inset 0 2px 5px #4c2c1677,0 1px #f5e2aa}
+.top .xp>.bar:before{inset:2px 4px;border-top:1px solid #fff0b777;border-radius:0}
+.top .xp>.bar i{border-right:2px solid #b98b3b;border-radius:0;background:repeating-linear-gradient(90deg,#245f50 0 16px,#1c5448 16px 18px);box-shadow:inset 0 2px 3px #8bb39a55}
+.top .xp>b{min-width:88px;padding:5px 10px;border:3px double #855a25;outline:0;border-radius:2px;background:linear-gradient(105deg,#ecd59d,#c99f58);box-shadow:inset 0 0 8px #6b3d1838;color:#512a14;font-size:15px}
+@media(max-width:740px){.top .xp{grid-template-columns:36px minmax(100px,1fr);padding:7px 9px}.top .xp:before,.top .xp:after{display:none}}
+
+/* Ornamental jade frame inspired by traditional Chinese menu plaques. */
+.top .xp{grid-template-columns:40px minmax(190px,520px) auto;gap:12px;max-width:720px;padding:9px 17px 9px 12px;border:2px solid #e2b64d;outline:2px solid #724216;outline-offset:2px;border-radius:3px 15px 3px 15px;background:linear-gradient(180deg,#0c5b4b,#053d35 52%,#032d28);box-shadow:inset 0 0 0 2px #c99231,inset 0 0 0 5px #06342d,inset 0 0 18px #001c18,0 4px 8px #4a291744}
+.top .xp:before,.top .xp:after{content:'';display:block;z-index:3;top:50%;width:42px;height:50px;margin-top:-25px;border:0;background:linear-gradient(135deg,transparent 0 28%,#d7a83f 29% 34%,transparent 35% 64%,#d7a83f 65% 70%,transparent 71%),linear-gradient(45deg,transparent 0 28%,#8b5a20 29% 34%,transparent 35% 64%,#8b5a20 65% 70%,transparent 71%),radial-gradient(circle at 72% 50%,transparent 0 6px,#d8aa42 7px 9px,transparent 10px 13px,#9d6b27 14px 16px,transparent 17px);filter:drop-shadow(0 1px #40230e)}
+.top .xp:before{left:-30px}.top .xp:after{right:-30px;transform:scaleX(-1)}
+.top .xp>.ui-mark{width:36px;height:36px;border:2px solid #f0d071;outline:2px solid #9c681f;outline-offset:2px;border-radius:50%;background:radial-gradient(circle,#a63a20,#72170b 65%,#481008);box-shadow:inset 0 0 0 2px #d89d35,0 2px 5px #001c17;color:#ffe49a}
+.top .xp>.bar{height:16px;border:1px solid #edcb6c;outline:2px solid #8f5e20;outline-offset:2px;border-radius:2px;background:linear-gradient(#b8893d,#e0c176 50%,#9c6f2e);box-shadow:inset 0 2px 5px #3e240f99,0 0 0 1px #062f29}
+.top .xp>.bar:before{inset:2px 4px;border-top:1px solid #fff0b766;border-radius:0}
+.top .xp>.bar i{border-right:2px solid #e4b74c;border-radius:0;background:repeating-linear-gradient(90deg,#2c8069 0 20px,#216b59 20px 22px);box-shadow:inset 0 2px 3px #a4d5b766,0 0 6px #d6ac4266}
+.top .xp>b{min-width:88px;padding:5px 10px;border:1px solid #efd176;outline:2px solid #906020;outline-offset:1px;border-radius:2px 8px 2px 8px;background:linear-gradient(#f0d596,#c69a4c);box-shadow:inset 0 0 0 2px #f6dfa5,inset 0 0 9px #6b3f1b55;color:#512612;font-size:15px}
+@media(max-width:740px){.top .xp{grid-template-columns:36px minmax(100px,1fr);padding:7px 10px}.top .xp:before,.top .xp:after{display:none}}
+
+/* Exact reference-style frame asset. */
+.top .xp{grid-template-columns:38px minmax(180px,520px) auto;gap:11px;min-height:54px;max-width:720px;padding:8px 54px;border:0;outline:0;border-radius:0;background-color:transparent;background-image:url('assets/ui/progress-frame-reference.png?v=1');background-position:center;background-size:100% 100%;background-repeat:no-repeat;box-shadow:none}
+.top .xp:before,.top .xp:after{display:none}
+.top .xp>.ui-mark{width:34px;height:34px;margin:0;border:2px solid #edc760;outline:1px solid #94621e;outline-offset:1px}
+.top .xp>.bar{height:14px;margin:0;border:1px solid #e9c45f;outline:1px solid #8e5c1d;outline-offset:1px;background:#d2b16c;box-shadow:inset 0 2px 4px #4a2b1477}
+.top .xp>.bar i{background:linear-gradient(180deg,#399078,#176653 55%,#0d4b40)}
+.top .xp>b{min-width:82px;padding:4px 8px;border:1px solid #edc967;outline:1px solid #8d5b1d;outline-offset:1px;background:linear-gradient(#efd796,#c89d4d)}
+@media(max-width:740px){.top .xp{grid-template-columns:34px minmax(90px,1fr);min-height:48px;padding:7px 40px}.top .xp>b{display:none}}

@@ -1,0 +1,41 @@
+.word-list{min-width:270px}
+.word-list .word-entry{display:grid;grid-template-columns:44px minmax(105px,1fr) 52px 24px;gap:8px;align-items:center;min-height:68px;padding:7px 0;border-bottom:1px solid #ad7c3d}
+.word-sound{display:grid;place-items:center;width:42px;height:42px;padding:0;border:2px solid #b98332;border-radius:50%;background:#efd69e}
+.word-sound .ui-mark{width:28px;height:28px;min-width:28px;margin:0;padding:0;line-height:24px}
+.word-entry__label{display:flex;min-width:0;flex-direction:column;text-align:left;line-height:1.15}
+.word-entry__label b{font-size:20px}.word-entry__label small{margin-top:4px;font-size:11px;white-space:normal}
+.word-list .list-animal{width:50px;height:50px;border:2px solid #b98230;border-radius:50%;box-shadow:0 3px 7px #4b291633}
+.word-entry__status{display:grid;place-items:center;width:22px;height:22px;border:1px solid #a98043;border-radius:50%;color:#765c35;background:#e4c98f}
+.word-entry.found{color:inherit;text-decoration:none}
+.word-entry.found .word-entry__status{border-color:#28633f;background:#28633f;color:#fff}
+.word-entry.found .word-entry__status:before{content:'✓';font-weight:700}
+.word-entry.found .word-entry__label{color:#28633f}
+@media(max-width:1050px){.word-list{min-width:0}.word-list .word-entry{grid-template-columns:44px minmax(100px,1fr) 52px 24px}}
+.find-scene .climbers{position:absolute;inset:0;display:block;pointer-events:none}
+.scene-animals{position:absolute;inset:0;pointer-events:none}
+.find-scene-animal-wrap{position:absolute;z-index:2;left:var(--x);top:var(--y);transform:translate(-50%,-50%)}
+.find-scene-animal{width:86px;height:86px;border:4px double #d2a13c;border-radius:22%;background:#efd18c;box-shadow:0 5px 14px #28140d99}
+.climber-chip{position:absolute;z-index:3;left:var(--x);top:var(--y);transform:translate(-50%,-50%);transition:left 1.15s cubic-bezier(.22,.75,.25,1),top 1.15s cubic-bezier(.22,.75,.25,1),transform 1.15s,filter .5s}
+.climber-chip .climber-animal{width:52px;height:52px;border:3px solid #d2a13c;border-radius:50%;box-shadow:0 4px 10px #28140d99;background-color:#efd18c}
+.climber-chip.found{left:90%;top:9%;transform:translate(-50%,-50%) scale(.8);filter:drop-shadow(0 0 9px #ffe071)}
+.climber-chip.found .climber-animal{transform:none}
+.palace-target{position:absolute;z-index:2;right:3%;top:2%;padding:5px 10px;border:2px solid #d2a13c;border-radius:16px;background:#f3dca9dd;color:#663817;font-weight:700;box-shadow:0 3px 10px #27140b55}
+@media(max-width:650px){.climber-chip .climber-animal{width:38px;height:38px}.find-scene-animal{width:62px;height:62px}.palace-target{font-size:11px}}
+
+/* Stable proportions for crossword, scene and word list */
+.stage:has(.find-layout){min-height:0;padding-top:8px}.stage:has(.find-layout) .instruction{width:min(100%,1420px);max-width:none;margin-top:4px}
+.find-layout{width:min(100%,1420px);margin:0 auto;grid-template-columns:clamp(350px,27vw,410px) minmax(620px,1fr) 290px;gap:14px;align-items:start}
+.find-board,.word-list{height:auto;align-self:start}
+.find-board{padding:12px}
+.find-grid{width:100%;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.find-cell{width:100%;min-width:0;aspect-ratio:1;font-size:clamp(23px,1.55vw,29px);line-height:1;padding:4px}
+.find-cell small{min-height:13px;margin-top:5px;font-size:11px;line-height:1}
+.find-scene{width:100%;aspect-ratio:3/2;max-height:540px;align-self:start}
+.find-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.word-list{min-width:0;padding:12px}
+.word-list .word-entry{grid-template-columns:42px minmax(100px,1fr) 48px 22px;min-height:67px;gap:7px}
+.word-list .list-animal{width:48px;height:48px}
+.word-list--audio .word-entry{grid-template-columns:54px minmax(70px,1fr) 26px;justify-items:center;min-height:70px}.word-list--audio .word-sound{justify-self:start}.word-list--audio .list-animal{width:62px;height:62px;justify-self:center}.word-list--audio .word-entry__status{justify-self:end}
+@media(max-width:1280px){.find-layout{width:min(100%,1120px);grid-template-columns:minmax(350px,410px) minmax(570px,1fr)}.word-list{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:0 14px}.word-list h3{grid-column:1/-1}.word-list .word-entry{grid-template-columns:42px minmax(95px,1fr) 48px 22px}}
+@media(max-width:900px){.find-layout{grid-template-columns:1fr}.find-board{width:min(100%,520px);margin:auto}.find-scene{width:min(100%,760px);margin:auto}.word-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.word-list{grid-template-columns:1fr}.find-cell{font-size:21px}.find-cell small{font-size:9px}}
