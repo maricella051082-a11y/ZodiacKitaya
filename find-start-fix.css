@@ -1,0 +1,97 @@
+/* Compact level selection aligned with the Sudoku start screen. */
+@media (min-width: 801px) {
+  .find-start__choice {
+    grid-template-rows: auto auto minmax(86px, 1fr) !important;
+    overflow: hidden;
+  }
+
+  .find-mode-cards {
+    grid-template-rows: repeat(2, clamp(145px, 20vh, 178px)) !important;
+    align-content: start;
+    gap: 12px !important;
+  }
+
+  .find-mode-card {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    min-height: 0 !important;
+    padding: 12px 40px 12px 15px !important;
+    border-width: 4px !important;
+    border-radius: 0 !important;
+    background: #fff2d3 !important;
+    box-shadow: 0 6px 12px rgba(74, 41, 31, .23) !important;
+  }
+
+  .find-mode-card > strong {
+    width: 92px !important;
+    height: 92px !important;
+    font-size: 56px !important;
+  }
+
+  .find-mode-card > span { gap: 8px !important; }
+  .find-mode-card > span > b { font-size: 31px !important; }
+  .find-mode-card small {
+    max-width: 260px !important;
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+  }
+
+  .find-start__choice footer {
+    align-self: end;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 90px !important;
+    align-items: center;
+    gap: 8px !important;
+    width: 100%;
+    min-height: 88px;
+    padding: 6px 0 0 !important;
+  }
+
+  .find-start__choice footer > div { min-width: 0; }
+  .find-start__choice footer p {
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    margin: 2px 0 !important;
+    font-size: 19px !important;
+    white-space: nowrap;
+  }
+
+  .find-start__choice footer p > b { font-size: 21px !important; }
+  .find-start__choice footer p > span { gap: 2px !important; }
+  .find-start__choice footer img {
+    width: auto !important;
+    height: 39px !important;
+  }
+
+  .find-start__go {
+    width: 90px !important;
+    min-width: 90px !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-size: contain !important;
+    font-size: 22px !important;
+    line-height: .92 !important;
+  }
+}
+
+@media (min-width: 801px) and (max-height: 760px) {
+  .find-mode-cards { grid-template-rows: repeat(2, 125px) !important; }
+  .find-start__go {
+    width: 80px !important;
+    min-width: 80px !important;
+    height: 80px !important;
+    min-height: 80px !important;
+  }
+  .find-start__choice footer {
+    grid-template-columns: minmax(0, 1fr) 80px !important;
+    min-height: 76px;
+  }
+  .find-mode-card > strong { width: 76px !important;height:76px !important;font-size:46px !important; }
+  .find-mode-card { grid-template-columns:94px minmax(0,1fr) !important; }
+  .find-mode-card > span > b { font-size:27px !important; }
+  .find-mode-card small { font-size:15px !important; }
+  .find-start__choice footer p { font-size:16px !important; }
+  .find-start__choice footer p > b { font-size:18px !important; }
+  .find-start__choice footer img { height:32px !important; }
+}

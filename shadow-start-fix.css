@@ -1,0 +1,128 @@
+/* Unified start screen for "Тени зодиака". Gameplay styles stay untouched. */
+.shadow-game:has(.shadow-story--intro){padding:8px 18px 14px}
+.shadow-game:has(.shadow-story--intro) .shadow-game__header{
+  height:84px;
+  padding:0 4px;
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr) 58px;
+  grid-template-rows:84px;
+  gap:12px;
+}
+.shadow-game:has(.shadow-story--intro) .shadow-game__exit{grid-area:1/1;align-self:center}
+.shadow-game:has(.shadow-story--intro) .shadow-game__heading{grid-area:1/2;align-self:center}
+.shadow-game:has(.shadow-story--intro) .shadow-game__heading h1{
+  font:700 clamp(45px,4.5vw,68px)/.9 'Cormorant Infant','PT Serif',serif;
+  letter-spacing:.015em;
+}
+.shadow-game:has(.shadow-story--intro) .shadow-game__heading p{margin-top:7px;font:600 clamp(14px,1.2vw,18px) 'PT Serif',serif}
+.shadow-game:has(.shadow-story--intro) .sound-control{grid-area:1/3;position:static;align-self:center;justify-self:end;width:52px;height:52px}
+.shadow-game:has(.shadow-story--intro) .shadow-game__stage{height:calc(100svh - 106px);min-height:0}
+
+.shadow-game .shadow-story--intro{
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(340px,.72fr);
+  gap:22px;
+  width:min(1420px,100%);
+  max-width:1420px;
+  height:100%;
+  padding:12px;
+  background:linear-gradient(135deg,#d5aa57,#7b431f 7px,#f2d58d 8px,#8a4d22 10px,#e4bf68 12px);
+  overflow:hidden;
+}
+.shadow-game .shadow-story--intro::before{inset:7px}
+.shadow-game .shadow-story--intro>img{
+  box-sizing:border-box;
+  width:100%;
+  height:100%;
+  min-height:0;
+  aspect-ratio:auto;
+  object-fit:cover;
+  object-position:center;
+  border:3px double #9a642b;
+}
+.shadow-game .shadow-story--intro .shadow-story__paper{
+  box-sizing:border-box;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  margin:0;
+  padding:clamp(18px,2vw,32px);
+  text-align:center;
+  background:linear-gradient(135deg,#fff0c8f5,#efd394f5);
+  border:2px solid #b68135;
+  box-shadow:inset 0 0 28px #b77d3038,0 8px 20px #3c220d40;
+}
+.shadow-game .shadow-story--intro .shadow-story__paper h2{
+  margin:0 0 14px;
+  color:#92291a;
+  font:700 clamp(30px,3vw,48px)/1 'Cormorant Infant','PT Serif',serif;
+}
+.shadow-game .shadow-story--intro .shadow-story__paper p{
+  margin:0 auto 18px;
+  color:#432c1d;
+  font:400 clamp(15px,1.25vw,19px)/1.52 'PT Serif',serif;
+}
+.shadow-game .shadow-story--intro .shadow-story__warning{
+  display:grid;
+  grid-template-columns:auto auto;
+  align-items:center;
+  justify-content:center;
+  gap:4px 12px;
+  width:100%;
+  margin:0 auto 18px;
+  padding:10px 14px;
+  background:linear-gradient(180deg,#0a594c,#073f37);
+  border:3px double #c79a49;
+  border-radius:12px;
+  color:#f2dfb0;
+}
+.shadow-game .shadow-story--intro .shadow-story__warning>b{font:700 19px 'PT Serif',serif;white-space:nowrap}
+.shadow-game .shadow-story--intro .shadow-story__warning>div{display:flex;gap:6px}
+.shadow-game .shadow-story--intro .shadow-story__warning .jade-life{width:34px;height:44px}
+.shadow-game .shadow-story--intro .shadow-story__warning>span{grid-column:1/-1;text-align:center;font:400 13px 'PT Serif',serif}
+.shadow-game .shadow-story--intro .shadow-story__start{
+  flex:none;
+  display:grid;
+  place-items:center;
+  width:clamp(94px,8vw,120px);
+  aspect-ratio:1;
+  margin:0 auto;
+  padding:0;
+  border:0;
+  background:transparent url('assets/ui/home/cards/game-play-button.png') center/contain no-repeat;
+  color:#f8dfa0;
+  cursor:pointer;
+  filter:drop-shadow(0 5px 7px #3c220d70);
+  transition:transform 200ms ease,filter 200ms ease;
+}
+.shadow-game .shadow-story--intro .shadow-story__start span{font:700 clamp(18px,1.7vw,24px) 'PT Serif',serif;text-shadow:0 2px 2px #173b30}
+.shadow-game .shadow-story--intro .shadow-story__start:hover{transform:scale(1.04);filter:drop-shadow(0 5px 10px #e0ad45aa)}
+.shadow-game .shadow-story--intro .shadow-story__start:active{transform:scale(.97)}
+
+@media(max-height:760px) and (min-width:821px){
+  .shadow-game:has(.shadow-story--intro) .shadow-game__header{height:70px;grid-template-rows:70px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__heading h1{font-size:42px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__heading p{margin-top:3px;font-size:14px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__stage{height:calc(100svh - 90px)}
+  .shadow-game .shadow-story--intro .shadow-story__paper{padding:16px 22px}
+  .shadow-game .shadow-story--intro .shadow-story__paper h2{font-size:32px;margin-bottom:8px}
+  .shadow-game .shadow-story--intro .shadow-story__paper p{font-size:14px;line-height:1.4;margin-bottom:10px}
+  .shadow-game .shadow-story--intro .shadow-story__warning{margin-bottom:10px;padding:6px 10px}
+  .shadow-game .shadow-story--intro .shadow-story__warning .jade-life{width:28px;height:37px}
+  .shadow-game .shadow-story--intro .shadow-story__start{width:82px}
+}
+@media(max-width:820px){
+  .shadow-game:has(.shadow-story--intro){height:auto;overflow:visible}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__header{grid-template-columns:100px minmax(0,1fr) 48px;height:auto;min-height:92px;grid-template-rows:92px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__heading{grid-area:1/2}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__heading h1{font-size:38px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__heading p{display:none}
+  .shadow-game:has(.shadow-story--intro) .sound-control{grid-area:1/3;width:44px;height:44px}
+  .shadow-game:has(.shadow-story--intro) .shadow-game__stage{height:auto}
+  .shadow-game .shadow-story--intro{grid-template-columns:1fr;height:auto;overflow:visible}
+  .shadow-game .shadow-story--intro>img{height:auto;aspect-ratio:16/10}
+}

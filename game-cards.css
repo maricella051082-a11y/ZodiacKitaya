@@ -1,16 +1,68 @@
-.game-tile{display:flex;flex-direction:column;min-height:0;height:auto;background:#efd79d;overflow:visible}.game-tile.small{min-height:0}.game-tile .ribbon{position:relative;order:-1;left:auto;right:auto;top:auto;flex:none;margin:10px 13px 0;padding:9px 18px}.game-tile .game-tile__image{position:relative;inset:auto;display:block;flex:none;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:center;background:#e8cf96;filter:saturate(.92) sepia(.04);transition:filter .25s}.game-tile:nth-child(-n+2) .game-tile__image{aspect-ratio:16/9}.game-tile:nth-child(2) .game-tile__image{object-fit:contain;background:linear-gradient(90deg,#d1b46c,#efdba7 18% 82%,#d1b46c)}.game-tile:hover .game-tile__image{transform:none;filter:saturate(1) sepia(0)}.game-tile .game-tile__foot{position:relative;left:auto;right:auto;bottom:auto;margin-top:auto;padding:14px 15px 16px;background:#efd79d;border-top:1px solid #c6923d}.game-tile .game-tile__foot p{min-height:22px}.game-tile .red-button{margin-top:2px}@media(max-width:740px){.game-tile,.game-tile.small{min-height:0}.game-tile:nth-child(-n+2) .game-tile__image,.game-tile .game-tile__image{aspect-ratio:3/2}.game-tile:nth-child(2) .game-tile__image{aspect-ratio:1/1}}
-.game-tile .ribbon b{display:flex;align-items:center;justify-content:center;width:54px;height:54px;padding:4px 0 0!important;line-height:1!important;text-align:center;text-indent:0;font-variant-numeric:tabular-nums;font-family:"PT Serif",serif;font-size:25px}
+/* Компактная главная по книжному референсу. Существующие preview-assets не изменяются. */
+.hero{padding:5px 16px 9px}.hero__cn{display:none}.hero h1{margin:0;color:#3d2718;font:600 clamp(38px,3.2vw,58px)/1 "Cormorant Infant",serif;letter-spacing:-.015em;text-shadow:0 1px #fff5d7}
+.home{display:grid;grid-template-columns:minmax(0,1fr) clamp(230px,18vw,300px);gap:12px;max-width:1540px;margin:0 auto;padding:0 clamp(12px,2.5vw,38px) 70px}
+.home .game-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;min-width:0}
+.game-tile{position:relative;display:grid;grid-template-rows:minmax(0,1fr) auto;grid-column:span 4;min-width:0;min-height:0;overflow:hidden;border:1px solid #d4aa65;border-radius:18px;background:#f6e7c7;box-shadow:0 5px 16px #54331b2b}
+.game-tile--4{grid-column:span 5}.game-tile--5{grid-column:span 7}
+.game-tile__image{position:relative;inset:auto;display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center;background:#ead6aa;filter:saturate(1.05) contrast(1.03)}
+.game-tile--1 .game-tile__image{object-position:center 46%}.game-tile--5 .game-tile__image{object-position:center 58%}
+.game-tile__body{position:relative;display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"number title play" "number desc play" "lives lives play";align-items:center;column-gap:9px;min-height:112px;padding:10px 70px 10px 13px;background:linear-gradient(90deg,#fff2d5f2,#eed5a8f2);border-top:1px solid #dfbc7c}
+.game-number{grid-area:number;align-self:start;display:grid;place-items:center;width:39px;height:39px;border:2px solid #e2b250;border-radius:50%;background:linear-gradient(#a82f18,#741407);box-shadow:0 2px 5px #4b210f55;color:#ffe8aa;font:700 22px "Cormorant Infant",serif}
+.game-tile h2{grid-area:title;min-width:0;margin:0;color:#402719;font:700 clamp(20px,1.45vw,27px)/1 "Cormorant Infant",serif;overflow-wrap:break-word}
+.game-tile__body>p{grid-area:desc;margin:1px 0;color:#64472e;font-size:clamp(13px,1vw,16px);white-space:nowrap}
+.preview-lives{grid-area:lives;display:flex;align-items:center;gap:9px;min-width:0;margin-top:5px;font-size:14px}.preview-lives>span{display:flex;align-items:end;gap:3px}.preview-lives img{display:block;width:auto;height:clamp(23px,1.8vw,29px)}
+.play-arrow{grid-area:play;position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:clamp(48px,3.5vw,54px);height:clamp(48px,3.5vw,54px);padding:0;border:3px double #e0b451;border-radius:50%;background:linear-gradient(#176454,#063a32);box-shadow:0 3px 8px #253c2c55;color:#ffe2a0;transition:transform .2s,box-shadow .2s}
+.play-arrow i{font:normal 42px/1 serif;transform:translate(-1px,-2px);transition:transform .2s}.play-arrow:hover{transform:translateY(-2px);box-shadow:0 5px 12px #253c2c66,0 0 10px #d5ae4c88}.play-arrow:hover i{transform:translate(2px,-2px)}
+.collection-home-tile{display:flex;flex-direction:column;align-items:center;min-width:0;min-height:0;padding:0 12px 20px;overflow:hidden;border:1px solid #c99d50;border-radius:18px;background:linear-gradient(#f8e9c9,#ecd09c);box-shadow:0 6px 18px #4f301c35;color:var(--ink);font:inherit}
+.collection-home-tile h2{width:calc(100% + 24px);margin:0 0 7px;padding:11px 8px;border:0;border-bottom:3px double #d8aa48;background:linear-gradient(#0c5649,#063b34);color:#f4d487;font:700 clamp(21px,1.6vw,27px) "Cormorant Infant",serif}
+.collection-home-tile .wheel{width:min(100%,270px);height:auto;aspect-ratio:1;margin:auto}
+.collection-count{margin:4px 0 8px;font-size:18px}.collection-home-tile__action{margin-top:auto;padding:9px 15px;border:2px solid #d5a143;border-radius:22px;background:linear-gradient(#176454,#073d34);box-shadow:0 2px 5px #26350f55;color:#ffe5a0;font-size:14px;white-space:nowrap}
+@media(min-width:1061px) and (min-height:700px){body:has(.home){height:100svh;overflow:hidden}.home{height:calc(100svh - 188px)}.bottom{position:fixed}}
+@media(max-width:1050px){.hero h1{white-space:normal}.home{grid-template-columns:1fr 250px}.home .game-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.game-tile,.game-tile--4,.game-tile--5{grid-column:span 1}.game-tile--5{grid-column:1/-1}.collection-home-tile{grid-column:2;grid-row:1}.home .game-grid{grid-column:1}.game-tile__image{min-height:170px}}
+@media(max-width:760px){body:has(.home){height:auto;overflow-x:hidden;overflow-y:auto}.hero{padding:8px 12px 12px;overflow:hidden}.hero h1{max-width:100%;font-size:clamp(29px,8vw,34px);line-height:1.02;overflow-wrap:normal}.home{display:flex;flex-direction:column;padding:0 10px 72px}.home .game-grid{display:grid;grid-template-columns:1fr}.game-tile,.game-tile--4,.game-tile--5{grid-column:auto}.game-tile__image{height:auto;min-height:190px;max-height:260px;aspect-ratio:16/9}.game-tile__body{min-height:106px}.collection-home-tile{min-height:380px;order:2}.collection-home-tile .wheel{width:min(310px,88%)}.play-arrow{min-width:44px;min-height:44px}.preview-lives img{height:23px}}
+@media(prefers-reduced-motion:reduce){.play-arrow,.play-arrow i,.jade-traveler,.journey-point{animation:none!important;transition:none!important}}
 
-/* Balanced home: three cards in each row, collection is the sixth card. */
-.home{display:block;padding-inline:clamp(10px,2.5vw,40px)}
-.home .game-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.home .game-tile,.home .game-tile.small{grid-column:span 1;min-width:0}
-.home .game-tile .game-tile__image,.home .game-tile:nth-child(-n+2) .game-tile__image{aspect-ratio:3/2}
-.collection-home-tile{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:0;width:100%;padding:10px 13px 16px;border:3px solid #bf8730;font:inherit;color:var(--ink);cursor:pointer;transition:filter .25s,transform .25s}
-.collection-home-tile:hover{filter:saturate(1.08);transform:translateY(-2px)}
-.collection-home-tile h2{width:100%;margin:0 0 4px;padding:10px 18px;border:2px solid #d8a447;background:linear-gradient(#176454,#073d34);box-shadow:0 4px 9px #351509;color:#ffe7a3;text-align:center;font:700 29px "Cormorant Garamond"}
-.collection-home-tile .wheel{width:min(410px,92%);margin:3px auto 5px}
-.collection-home-tile .collection-count{margin-top:auto}
-.collection-home-tile__action{display:inline-block;margin-top:9px;padding:9px 25px;border:2px solid #d5a143;background:linear-gradient(#1b6657,#073d34);box-shadow:0 3px 0 #26350f;color:#ffe5a0}
-@media(max-width:1100px){.home .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:740px){.home .game-grid{display:grid;grid-template-columns:1fr}.collection-home-tile .wheel{width:min(360px,92%)}}
+/* Home screen v3: full-scale composition based on the approved reference. */
+body:has(.home){overflow-x:hidden}
+body:has(.home) .top{min-height:82px;padding:7px clamp(18px,2.4vw,46px)}
+body:has(.home) .logo{font-size:clamp(19px,1.45vw,25px)}
+body:has(.home) .logo .seal{width:55px;height:55px;font-size:25px;box-shadow:0 3px 9px #4a1c0b55}
+body:has(.home) .sound-control{min-height:48px;padding:8px 17px;font-size:17px}
+.hero{padding:7px 16px 12px}
+.hero h1{font:700 clamp(49px,4.3vw,73px)/.95 "Cormorant Infant",serif;letter-spacing:-.025em;text-shadow:0 1px #fff5d7,0 3px 10px #74462222}
+.home{width:min(1580px,calc(100vw - 32px));max-width:none;grid-template-columns:minmax(0,1fr) clamp(275px,20vw,325px);gap:16px;padding:0 0 82px}
+.home .game-grid{height:100%;max-height:100%;gap:15px;overflow:hidden}
+.game-tile{height:100%;max-height:100%;border:2px solid #c89643;border-radius:20px;box-shadow:inset 0 0 0 1px #f6d99a,0 7px 19px #43271638;transition:transform .22s ease,box-shadow .22s ease}
+.game-tile:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px #f6d99a,0 11px 25px #4327164d}
+.game-tile--4,.game-tile--5{grid-column:span 6}
+.game-tile__image{object-fit:cover;transition:transform .55s ease,filter .3s ease}
+.game-tile:hover .game-tile__image{transform:scale(1.018);filter:saturate(1.09) contrast(1.04)}
+.game-tile--1 .game-tile__image{object-position:center 42%}
+.game-tile--2 .game-tile__image{object-position:center 48%}
+.game-tile--3 .game-tile__image{object-position:center 50%}
+.game-tile--4 .game-tile__image{object-position:center 54%}
+.game-tile--5 .game-tile__image{object-position:center 54%}
+.game-tile__body{min-height:126px;padding:12px 82px 11px 15px;column-gap:11px}
+.game-number{width:46px;height:46px;border-width:3px;font-size:26px;box-shadow:inset 0 0 0 2px #6e1209,0 3px 7px #4b210f66}
+.game-tile h2{font-size:clamp(24px,1.6vw,30px);line-height:.98}
+.game-tile__body>p{margin-top:3px;font-size:clamp(15px,1vw,18px)}
+.preview-lives{gap:12px;margin-top:7px;font-size:16px}.preview-lives b{font-weight:700}.preview-lives>span{gap:5px}.preview-lives img{height:clamp(29px,2vw,35px);filter:drop-shadow(0 2px 2px #4a2a1955)}
+.play-arrow{right:14px;bottom:16px;width:64px;height:64px;border-width:4px;box-shadow:inset 0 0 0 2px #062e29,0 4px 10px #253c2c66,0 0 0 2px #e3be6599;animation:homePlayBreath 3.2s ease-in-out infinite}
+.play-arrow i{font-size:49px}
+.play-arrow:hover{transform:translateY(-3px) scale(1.06);box-shadow:inset 0 0 0 2px #062e29,0 8px 15px #253c2c66,0 0 15px #e6bd5aaa}
+.collection-home-tile{position:relative;height:100%;max-height:100%;padding:0 16px 24px;border:4px double #b7812f;border-radius:22px;overflow:visible;background:linear-gradient(90deg,#e2bd78 0 5px,#f7e7c3 6px calc(100% - 6px),#d3a65d calc(100% - 5px));box-shadow:inset 0 0 0 4px #f7dc9c,inset 0 0 22px #8653212e,0 8px 20px #3d271b44}
+.collection-home-tile:before,.collection-home-tile:after{content:'';position:absolute;inset:9px;pointer-events:none;border:1px solid #c99743;border-radius:13px}.collection-home-tile:after{inset:14px;border-color:#e4bd6a88}
+.collection-home-tile h2{position:relative;z-index:2;width:calc(100% + 32px);margin:0 -16px 6px;padding:15px 42px 14px 12px;border-radius:17px 17px 0 0;font-size:clamp(23px,1.65vw,29px);text-shadow:0 1px #032b25}
+.collection-home-seal{position:absolute;z-index:4;right:15px;top:11px;display:grid;place-items:center;width:38px;height:38px;border:3px double #f0c66b;border-radius:6px;background:#9c2f1c;color:#ffe5a3;font:700 20px "Noto Serif SC",serif;box-shadow:0 2px 5px #35150b88}
+.collection-home-tile .collection-count{z-index:2;order:0;margin:8px 0 3px;padding:5px 17px;font-size:19px}
+.collection-home-tile .wheel{z-index:2;width:min(100%,295px);margin:auto;filter:drop-shadow(0 8px 9px #49250d66)}
+.collection-home-tile__action{position:relative;z-index:2;margin:8px 0 2px;padding:11px 18px;border-width:3px;border-radius:25px;font-size:15px;box-shadow:inset 0 0 0 2px #0a392f,0 3px 7px #26350f66}
+.collection-home-tassel{position:absolute;z-index:4;left:50%;bottom:-38px;width:9px;height:41px;transform:translateX(-50%);border-radius:4px;background:linear-gradient(90deg,#8d1d12,#d14821 45%,#7a160d);box-shadow:-4px 27px 0 -2px #9e2514,4px 27px 0 -2px #9e2514}.collection-home-tassel:before{content:'';position:absolute;left:50%;top:-6px;width:13px;height:13px;transform:translateX(-50%) rotate(45deg);border:2px solid #e0ad4c;background:#a42717}
+@keyframes homePlayBreath{50%{box-shadow:inset 0 0 0 2px #062e29,0 5px 12px #253c2c66,0 0 13px #e1b85288}}
+
+@media(min-width:1181px) and (min-height:840px){body:has(.home){height:100svh;overflow-y:hidden}.home{height:calc(100svh - 178px)}.bottom{position:fixed}}
+@media(min-width:1181px) and (max-height:839px){body:has(.home){height:auto;overflow-y:auto}.hero h1{font-size:48px}.home{min-height:720px;padding-bottom:18px}.bottom{position:relative!important;bottom:auto!important}}
+@media(min-width:1181px) and (max-width:1500px){.game-tile h2{font-size:23px}.game-tile__body{padding-right:76px}.play-arrow{width:58px;height:58px}}
+@media(max-width:1180px){body:has(.home){height:auto;overflow-y:auto}.home{grid-template-columns:minmax(0,1fr) 270px;width:min(1120px,calc(100vw - 24px));padding-bottom:18px}.home .game-grid{height:auto;max-height:none;overflow:visible;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.game-tile,.game-tile--4,.game-tile--5{grid-column:span 1;height:auto;max-height:none;min-height:390px}.game-tile--5{grid-column:1/-1}.game-tile__image{min-height:230px}.game-tile h2{font-size:20px}.game-tile__body{padding-right:66px}.play-arrow{right:8px;width:54px;height:54px}.collection-home-tile{height:auto;max-height:none;min-height:650px;align-self:start}.bottom{position:relative!important;bottom:auto!important}}
+@media(max-width:820px){body:has(.home) .top{flex-wrap:wrap;gap:5px 12px}.jade-tracker{order:3;flex-basis:100%}.home{display:flex;width:min(720px,calc(100vw - 20px));flex-direction:column}.home .game-grid{grid-template-columns:1fr}.game-tile,.game-tile--5{grid-column:auto;min-height:0}.game-tile__image{height:auto;min-height:0;aspect-ratio:16/9}.collection-home-tile{min-height:470px}.collection-home-tile .wheel{width:min(330px,78vw)}}
+@media(max-width:520px){.hero h1{font-size:36px}.game-tile__body{min-height:120px;padding-left:10px}.game-tile h2{font-size:22px}.game-tile__body>p{font-size:14px}.game-number{width:40px;height:40px}.preview-lives img{height:26px}.play-arrow{width:56px;height:56px}.collection-home-tile{min-height:430px}}

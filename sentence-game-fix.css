@@ -1,0 +1,74 @@
+/* Clean internal layout for the sentence game. */
+.sentence-game{
+  padding-top:8px;
+  border-width:3px;
+  background:linear-gradient(135deg,#f8e7b9,#eed29a 55%,#f7e5b7);
+}
+.sentence-game::before,.sentence-game::after{display:none}
+.sentence-game__header{height:96px}
+.sentence-game__header h1{font-size:clamp(48px,5vw,76px)}
+.sentence-game__layout{height:calc(100svh - 118px)}
+.sentence-game__stage{display:flex;min-width:0;min-height:0;align-items:center;justify-content:center}
+.sentence-game .sentence-scene--new{
+  width:auto!important;
+  height:100%!important;
+  max-width:100%;
+  max-height:100%;
+  aspect-ratio:3/2!important;
+  background:linear-gradient(135deg,#e8cf98,#f6e7bd);
+}
+.sentence-game .sentence-scene--new>img{
+  width:100%;
+  height:100%;
+  object-fit:contain!important;
+  object-position:center;
+  background:linear-gradient(135deg,#f5e3b4,#ead09a);
+}
+
+/* Keep the whole illustrated animal visible and let the task cover the
+   decorative card table that is painted into the lower-right of the scene. */
+.sentence-game .sentence-side{
+  right:2.5%;
+  bottom:17.5%!important;
+  width:min(51%,590px);
+  min-height:250px;
+}
+
+.sentence-seals i{
+  border:0;
+  border-radius:0;
+  background:transparent url('assets/ui/header/header-red-seal.png') center/contain no-repeat;
+  color:transparent;
+  opacity:.2;
+  filter:grayscale(.8) sepia(.25) brightness(1.28);
+  box-shadow:none;
+  animation:none!important;
+  transition:none;
+}
+.sentence-seals i.is-earned{
+  opacity:1;
+  background:transparent url('assets/ui/header/header-red-seal.png') center/contain no-repeat;
+  color:transparent;
+  filter:saturate(1.15) brightness(1.12) drop-shadow(0 0 5px #ffd56b) drop-shadow(0 0 10px #e2a334);
+  box-shadow:none;
+  animation:none!important;
+}
+
+.sentence-game .sentence-tools .red-button{
+  min-width:210px;
+  padding:8px 20px;
+  border:3px double #d7ad55;
+  border-radius:8px;
+  background:linear-gradient(180deg,#0a6555,#06453c);
+  color:#f7dfa2;
+  font:700 17px 'PT Serif',serif;
+  box-shadow:inset 0 0 0 1px #f0cf7d33,0 4px 8px #41281155;
+  transition:filter 180ms ease,transform 180ms ease;
+}
+.sentence-game .sentence-tools .red-button:not(:disabled):hover{filter:brightness(1.1);transform:translateY(-1px)}
+.sentence-game .sentence-tools .red-button:disabled{opacity:.48;cursor:default;filter:grayscale(.35)}
+
+@media(max-height:800px) and (min-width:901px){
+  .sentence-game__header{height:76px}
+  .sentence-game__layout{height:calc(100svh - 94px)}
+}

@@ -1,0 +1,122 @@
+/* Единый стиль стартовых меню и правил */
+.mode-select,
+.rules-sheet,
+.shadow-story__paper{
+  --menu-red:#7c160d;
+  --menu-red-light:#a92d17;
+  --menu-gold:#d3a64a;
+  --menu-dark:#41180d;
+  position:relative;
+  isolation:isolate;
+  color:#452512;
+}
+
+.mode-select{
+  max-width:1380px;
+  min-height:660px;
+  margin:0 auto;
+  padding:62px clamp(34px,6vw,105px) 70px;
+  overflow:hidden;
+  border:12px solid transparent;
+  border-image:linear-gradient(135deg,#3a1209,#a34821 18%,#49170c 43%,#9c3d1d 72%,#2b0c07) 1;
+  background:
+    linear-gradient(90deg,transparent 0 70%,#fff5d650),
+    radial-gradient(circle at 76% 24%,transparent 0 70px,#d6a84a16 72px 74px,transparent 76px),
+    linear-gradient(#fff3cfed,#efd098f2),
+    url('assets/games/road-to-emperor.png') center/cover;
+  box-shadow:0 18px 42px #210b076e,inset 0 0 0 3px #e8bf63,inset 0 0 0 8px #5a1d0d,inset 0 0 52px #9a551f45;
+}
+.mode-select:before,.mode-select:after{
+  content:'';position:absolute;z-index:2;top:14px;width:88px;height:88px;
+  display:block;
+  border-style:solid;border-color:#d6a345;background:linear-gradient(135deg,#50190c,#8f3218 58%,#3a1008);
+  box-shadow:inset 0 0 0 4px #321008,0 3px 8px #230b07;
+}
+.mode-select:before{left:14px;border-width:3px 0 0 3px;clip-path:polygon(0 0,100% 0,100% 28%,68% 28%,68% 55%,38% 55%,38% 100%,0 100%)}
+.mode-select:after{right:14px;border-width:3px 3px 0 0;clip-path:polygon(0 0,100% 0,100% 100%,62% 100%,62% 55%,32% 55%,32% 28%,0 28%)}
+.mode-select>p:first-child{
+  display:flex;align-items:center;justify-content:center;gap:20px;margin:0 0 8px;
+  font-size:22px;font-weight:700;
+}
+.mode-select>p:first-child:before,.mode-select>p:first-child:after{content:'';width:90px;height:1px;background:linear-gradient(90deg,transparent,#b47a24)}
+.mode-select>p:first-child:after{background:linear-gradient(90deg,#b47a24,transparent)}
+.mode-select h2{margin:0;color:#78180f;font:700 clamp(46px,6vw,78px) "Cormorant Garamond";text-shadow:0 2px #fff1c8}
+.mode-select h2:after{content:'';display:block;width:150px;height:12px;margin:4px auto 8px;background:linear-gradient(90deg,transparent 0 42%,#bd8128 42% 47%,transparent 47% 53%,#bd8128 53% 58%,transparent 58%)}
+.mode-select>p:nth-of-type(2){margin:0 auto 28px;font-size:23px;font-weight:700}
+
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(22px,4vw,52px);margin:0 auto;max-width:1120px}
+.mode{
+  position:relative;min-height:355px;padding:34px 30px 30px;
+  border:3px solid #8b2a17;background:
+    radial-gradient(circle at 50% 28%,#e9c77a26 0 75px,transparent 77px),
+    linear-gradient(#fff0c9f5,#f4d9a7f5);
+  box-shadow:inset 0 0 0 4px #f7d88f,inset 0 0 0 6px #b7772c,0 12px 22px #35130855;
+  transition:transform .22s,filter .22s;
+}
+.mode:before,.mode:after{content:'';position:absolute;width:30px;height:30px;border-color:#8b2114;border-style:solid}
+.mode:before{left:8px;top:8px;border-width:3px 0 0 3px}.mode:after{right:8px;bottom:8px;border-width:0 3px 3px 0}
+.mode:hover{transform:translateY(-7px);filter:saturate(1.08);background:linear-gradient(#fff5d5,#f6dca9)}
+.mode__icon{min-height:92px;color:#a72216;font-size:58px;font-weight:700;text-shadow:0 2px #f7d58d}
+.mode h3{margin:5px 0 8px;font:700 42px "Cormorant Garamond"}
+.mode h3:after{content:'';display:block;width:150px;height:1px;margin:10px auto 8px;background:linear-gradient(90deg,transparent,#bc812c 25% 75%,transparent)}
+.mode p{min-height:48px;margin:0 0 22px;font-size:18px}
+.mode b,.road-animal-card b{
+  display:inline-flex;align-items:center;justify-content:center;min-width:220px;min-height:56px;padding:10px 30px;
+  color:#ffe9b5;background:linear-gradient(#ad2f18,#78150d);border:3px double #e0b352;
+  box-shadow:0 4px 0 #4c1209,0 8px 16px #3c140b55;font-size:24px;
+}
+
+/* Выбор спутника в первой игре использует ту же раму, но больше карточек. */
+.road-animal-select{max-width:1480px;padding-left:42px;padding-right:42px}
+.road-animal-grid{position:relative;z-index:3}
+.road-animal-card{border-color:#8c2917;background:linear-gradient(#fff0c9f5,#efd19bf5);box-shadow:inset 0 0 0 3px #eac376,0 8px 16px #32140d4d}
+.road-animal-card b{min-width:0;min-height:38px;padding:5px 20px;font-size:17px}
+
+/* Свиток правил — тот же визуальный язык, а не отдельное плоское окно. */
+.modal__paper:has(.rules-sheet){border:10px solid #541a0d;background:linear-gradient(#fff0c8,#eccb8f);box-shadow:inset 0 0 0 3px #e8b950,inset 0 0 0 7px #8a2b15,0 22px 60px #0009}
+.rules-sheet{padding:20px 30px 30px;background:radial-gradient(circle at 50% 28%,#d6a54d24,transparent 35%)}
+.rules-sheet__head{border-bottom:0}
+.rules-sheet__head>span{background:linear-gradient(#a92d17,#74140c);box-shadow:0 4px 0 #481109}
+.rules-sheet h2{color:#7b180f;font:700 46px "Cormorant Garamond"}
+.rules-sheet li{border:2px solid #9f6425;background:#fff0c6;box-shadow:inset 0 0 0 3px #f4d58c,0 5px 10px #4a261633}
+.rules-sheet .jade-button{background:linear-gradient(#aa2e17,#74140c);border-color:#e0b352}
+.rules-sheet__start,
+.lives-intro__start{
+  position:static;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  max-width:100%;
+  min-width:220px;
+  min-height:46px;
+  margin:20px auto 0;
+  padding:9px 24px;
+  color:#ffe7ac!important;
+  font-size:clamp(16px,1.5vw,20px);
+  line-height:1.2;
+  white-space:normal;
+}
+
+@media(max-width:760px){
+  .mode-select{min-height:0;padding:48px 18px 34px;border-width:7px}
+  .mode-select:before,.mode-select:after{width:55px;height:55px}
+  .mode-select h2{font-size:48px}
+  .modes{grid-template-columns:1fr;gap:18px}
+  .mode{min-height:300px}
+}
+
+/* Нижняя навигация главной: три равных компактных пункта. */
+.bottom{left:50%!important;right:auto!important;width:min(1000px,calc(100% - 24px))!important;height:60px!important;transform:translateX(-50%);display:grid!important;grid-template-columns:repeat(3,1fr);gap:0!important;border:3px double #d4a43d!important;border-radius:18px 18px 0 0;background:linear-gradient(#0a5145,#05372f)!important}
+.bottom button{display:flex!important;align-items:center;justify-content:center;gap:10px;min-width:0;width:auto!important;height:auto!important;margin:0!important;border:0!important;border-right:1px solid #ba8f3b55!important;background:none!important;box-shadow:none!important;font-size:clamp(20px,1.6vw,23px)}.bottom button:last-of-type{border-right:0!important}.bottom .nav-mark{width:34px;height:34px;margin:0;font-size:16px}.bottom small,.bottom__divider{display:none!important}
+@media(max-width:760px){.bottom{height:56px!important;width:100%!important;border-radius:0}.bottom button{gap:5px;font-size:15px}.bottom .nav-mark{width:30px;height:30px}.bottom span{display:inline!important}}
+
+/* Illustrated lower navigation on the main journey screen. */
+body:has(.home) .bottom{width:min(1240px,calc(100% - 32px))!important;height:68px!important;border-width:4px!important;border-radius:20px 20px 0 0!important;box-shadow:inset 0 0 0 2px #07332c,0 -4px 15px #2d1b1044!important}
+body:has(.home) .bottom button{position:relative;gap:14px;font-size:clamp(21px,1.65vw,27px);transition:background .2s ease,color .2s ease}
+body:has(.home) .bottom button:hover{background:#17604e99!important;color:#ffe7a2}
+.nav-image{display:block;width:45px;height:45px;object-fit:contain;filter:drop-shadow(0 2px 2px #001b16)}
+.nav-image--book{width:52px}
+.nav-image--reward{width:49px;height:48px;object-fit:cover;object-position:center;border:2px solid #d3a247;border-radius:50%}
+@media(max-width:760px){body:has(.home) .bottom{width:100%!important;height:59px!important}.nav-image{width:34px;height:34px}.nav-image--book{width:39px}.nav-image--reward{width:35px;height:35px}body:has(.home) .bottom button{gap:6px;font-size:15px}}
+@media(max-width:420px){body:has(.home) .bottom button span{font-size:13px}.nav-image{width:30px;height:30px}}

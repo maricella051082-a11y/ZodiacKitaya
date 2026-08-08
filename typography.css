@@ -1,0 +1,41 @@
+:root{
+  --font-display:"Cormorant Infant","PT Serif",serif;
+  --font-story:"PT Serif",serif;
+  --font-ui-title:"Cormorant Infant","PT Serif",serif;
+  --font-body:"PT Serif",serif;
+  --font-chinese:"Noto Serif SC",serif;
+}
+body{font-family:var(--font-body)}
+.hero h1,.road-start__top h1,.road-game__top>h1,.sudoku-start__heading h1,.sudoku-game__top h1,.shadow-game__heading h1,.find-start__top h1,.find-game__top h1,.sentence-start__top h1,.sentence-game__header h1,.zodiac-collection h1,.victory-screen__header h1{font-family:var(--font-display)!important;font-weight:700!important;letter-spacing:.01em!important}
+.road-start__legend>p,.sudoku-start__story>p,.find-start__story>p,.sentence-start__story>p,.shadow-story__paper p,.victory-screen__header p,.victory-screen__header small{font-family:var(--font-story)!important}
+.road-start__legend>p,.sudoku-start__story>p,.find-start__story>p,.sentence-start__story>p,.shadow-story__paper p,.victory-screen__header p{font-weight:400!important;line-height:1.48!important}
+.mode h3,.mode-select h2,.road-start__choice>h2,.sudoku-start__choice>h2,.find-start__choice>h2,.sentence-start__choice>h2,.road-task-panel h2,.game-tile h2,.shadow-story__paper h2,.shadow-workspace__title h2,.shadow-rescue-panel h2,.sudoku-frame h2,.find-board h2,.word-list h2,.sentence-seals h2{font-family:var(--font-ui-title)!important;font-weight:700!important}
+button,.story,.feedback,.road-task-panel__step,.game-tile__body>p{font-family:var(--font-body)}
+.hanzi,.mode__icon,.road-companion>span b,.sudoku-token b,.find-cell b,.sentence-token,.road-task-panel [lang="zh"]{font-family:var(--font-chinese)}
+
+/* One centered art button for every start screen. */
+.road-start__go,.sudoku-start__go,.find-start__go,.sentence-start__go,.shadow-story__start{
+  position:relative!important;
+  isolation:isolate;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden;
+  border:0!important;
+  background-color:transparent!important;
+  background-image:radial-gradient(circle at center,#064b40d9 0 27%,transparent 48%),url('assets/ui/home/cards/game-play-button.png')!important;
+  background-position:center!important;
+  background-size:100% 100%!important;
+  background-repeat:no-repeat!important;
+  color:#ffe7a2!important;
+  font-family:var(--font-ui-title)!important;
+  font-weight:700!important;
+  line-height:1!important;
+  text-align:center!important;
+  text-shadow:0 2px 3px #351b0d,0 0 5px #71440f;
+}
+.road-start__go>span{display:block;width:100%;text-align:center}
+.road-start__go i,.sudoku-start__go i,.find-start__go i,.sentence-start__go i,.shadow-story__start i{display:none!important}
+.road-start__go:before,.sudoku-start__go:before,.find-start__go:before,.sentence-start__go:before,.shadow-story__start:before{
+  display:none!important;
+}
+.road-start__go:disabled,.sudoku-start__go:disabled,.find-start__go:disabled,.sentence-start__go:disabled,.shadow-story__start:disabled{filter:grayscale(.45) brightness(.72)!important;opacity:.68!important}

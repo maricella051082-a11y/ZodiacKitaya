@@ -1,0 +1,99 @@
+.sound-control,
+.top .sound-control,
+.road-start .sound-control,
+.sudoku-start .sound-control,
+.sudoku-game .sound-control,
+.find-start .sound-control,
+.find-game .sound-control,
+.sentence-start .sound-control,
+.sentence-game .sound-control,
+.zodiac-collection .sound-control {
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline-offset: 3px;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  line-height: 0;
+  overflow: visible;
+  cursor: pointer;
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.sound-control img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sound-control[aria-pressed="false"] img {
+  opacity: .56;
+  filter: grayscale(.35) saturate(.58);
+}
+
+.sound-control:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 3px 5px rgba(68, 42, 13, .3));
+}
+
+.sound-control:active {
+  transform: scale(.97);
+}
+
+.road-game__top {
+  grid-template-columns: minmax(120px, 1fr) minmax(0, 2.2fr) 52px minmax(300px, 1fr);
+}
+
+.road-game__top > .sound-control {
+  justify-self: end;
+}
+
+@media (max-width: 1240px) {
+  .road-game__top {
+    grid-template-columns: minmax(110px, 1fr) 52px minmax(270px, auto);
+    grid-template-areas: "exit sound lives" "title title title";
+  }
+  .road-game__exit { grid-area: exit; }
+  .road-game__top > h1 { grid-area: title; }
+  .road-game__top > .sound-control { grid-area: sound; }
+  .road-game__top > .road-lives { grid-area: lives; }
+}
+
+@media (max-width: 600px) {
+  .sound-control,
+  .top .sound-control,
+  .road-start .sound-control,
+  .sudoku-start .sound-control,
+  .sudoku-game .sound-control,
+  .find-start .sound-control,
+  .find-game .sound-control,
+  .sentence-start .sound-control,
+  .sentence-game .sound-control,
+  .zodiac-collection .sound-control {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .road-game__top {
+    grid-template-columns: auto 42px minmax(0, 1fr);
+    grid-template-areas: "exit sound lives" "title title title";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sound-control { transition: none; }
+}
