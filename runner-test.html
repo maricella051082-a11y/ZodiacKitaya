@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>山间古道 · Прототип раннера</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@600;700&family=Noto+Serif+SC:wght@600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="runner.css">
+</head>
+<body>
+  <main class="runner-shell">
+    <header class="runner-top">
+      <div class="runner-title">
+        <small>第一关 · УРОВЕНЬ 1</small>
+        <h1>山间古道</h1>
+      </div>
+
+      <div class="runner-progress" aria-label="Прогресс уровня">
+        <span class="runner-progress__track"><i id="progressFill"></i></span>
+        <b id="progressText">0%</b>
+      </div>
+
+      <aside class="runner-lives" aria-label="Нефритовые хранители">
+        <span>Хранители</span>
+        <div id="lives"></div>
+      </aside>
+
+      <button class="sound-control" id="soundButton" type="button" aria-pressed="true" aria-label="Выключить звук">
+        <img src="assets/ui/sound-button.png?v=4" alt="">
+      </button>
+    </header>
+
+    <section class="runner-stage" id="stage" aria-label="Игровое поле">
+      <div class="runner-sky"></div>
+      <div class="runner-mountains runner-mountains--far" data-parallax=".08"></div>
+      <div class="runner-mountains runner-mountains--near" data-parallax=".16"></div>
+      <div class="runner-mist runner-mist--one"></div>
+      <div class="runner-mist runner-mist--two"></div>
+
+      <div class="runner-world" id="world">
+        <div class="road-decoration road-decoration--pine pine-a"></div>
+        <div class="road-decoration road-decoration--pine pine-b"></div>
+        <div class="road-decoration road-decoration--lantern lantern-a">灯</div>
+        <div class="road-decoration road-decoration--lantern lantern-b">灯</div>
+
+        <div class="runner-road">
+          <div class="runner-road__edge"></div>
+          <div class="runner-road__lanes" aria-hidden="true">
+            <i></i><i></i>
+          </div>
+        </div>
+
+        <div class="finish-gate" data-x="5650" aria-hidden="true">
+          <div class="finish-gate__roof"></div>
+          <div class="finish-gate__posts"><i></i><i></i></div>
+          <b>终点</b>
+        </div>
+
+        <div id="objects"></div>
+      </div>
+
+      <div class="runner-player" id="player" aria-label="Кролик">
+        <span class="runner-player__shadow"></span>
+        <div class="runner-player__figure">
+          <span class="runner-player__seal">兔</span>
+          <small>tù</small>
+        </div>
+      </div>
+
+      <div class="runner-challenge" id="challenge" hidden>
+        <small id="challengeHint">Знак на пути</small>
+        <strong id="challengeText">找到“兔”</strong>
+      </div>
+
+      <div class="runner-message" id="message" role="status" aria-live="polite"></div>
+
+      <div class="runner-controls runner-controls--mobile" aria-label="Управление">
+        <button type="button" data-control="up" aria-label="Выше">↑</button>
+        <button type="button" data-control="jump" aria-label="Прыжок">跃</button>
+        <button type="button" data-control="down" aria-label="Ниже">↓</button>
+      </div>
+
+      <div class="runner-start" id="startScreen">
+        <div class="runner-start__paper">
+          <small>十二生肖大赛</small>
+          <h2>Горная дорога</h2>
+          <p>Проведи Кролика по старой дороге. Меняй путь, перепрыгивай препятствия и проходи через верные китайские знаки.</p>
+          <div class="runner-start__keys">
+            <span><kbd>↑</kbd><kbd>↓</kbd> сменить путь</span>
+            <span><kbd>Space</kbd> прыжок</span>
+          </div>
+          <button class="runner-start__button" id="startButton" type="button">В путь</button>
+        </div>
+      </div>
+
+      <div class="runner-result" id="resultScreen" hidden>
+        <div class="runner-result__card">
+          <small>胜 · ПУТЬ ЗАВЕРШЁН</small>
+          <h2>山间古道</h2>
+          <div class="runner-result__stars" id="resultStars" aria-label="Звёзды"></div>
+          <dl>
+            <div><dt>Хранители</dt><dd id="resultLives">5 / 5</dd></div>
+            <div><dt>Знаки</dt><dd id="resultSigns">0 / 2</dd></div>
+            <div><dt>Нефритовые жетоны</dt><dd id="resultTokens">0 / 18</dd></div>
+          </dl>
+          <div class="runner-result__chest">
+            <img src="assets/rewards/emperor-chest.png" alt="Императорская шкатулка">
+            <span>Награда за первый путь</span>
+          </div>
+          <button type="button" id="replayButton">Пройти ещё раз</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="runner-help">
+      <span><b>↑ ↓</b> сменить путь</span>
+      <span><b>Space</b> прыжок</span>
+      <span>Избегай камней · собирай нефрит · выбирай верный знак</span>
+    </footer>
+  </main>
+
+  <audio id="music" src="assets/audio/chinese-background.mp3?v=1" loop preload="auto"></audio>
+  <script src="runner.js"></script>
+</body>
+</html>
